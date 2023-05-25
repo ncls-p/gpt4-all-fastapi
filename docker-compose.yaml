@@ -7,3 +7,4 @@ services:
       dockerfile: docker/Dockerfile
     ports:
       - "8027:8000"
+    restart: unless-stopped
