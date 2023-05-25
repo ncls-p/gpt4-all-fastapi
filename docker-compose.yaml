@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  app:
+  gpt4-all-fastapi:
     build:
       context: .
       dockerfile: docker/Dockerfile
