@@ -18,8 +18,8 @@ jobs:
                   port: ${{ secrets.PORT }}
                   key: ${{ secrets.SSHKEY }}
                   script: |
-                      if [ -d "/home/blury/gpt4-all-fastapi" ]; then
-                        rm -rf /home/blury/gpt4-all-fastapi
+                      if [ -d "/home/blury/perso/ia/gpt4-all-fastapi" ]; then
+                        rm -rf /home/blury/perso/ia/gpt4-all-fastapi
                       fi
 
     uploadFiles:
@@ -37,7 +37,7 @@ jobs:
                   port: ${{ secrets.PORT }}
                   key: ${{ secrets.SSHKEY }}
                   source: "."
-                  target: "/home/blury/gpt4-all-fastapi"
+                  target: "/home/blury/perso/ia/gpt4-all-fastapi"
 
     buildAndRun:
         needs: uploadFiles
@@ -54,7 +54,7 @@ jobs:
                   port: ${{ secrets.PORT }}
                   key: ${{ secrets.SSHKEY }}
                   script: |
-                      cd /home/blury/gpt4-all-fastapi
-                      docker-compose down --remove-orphans
-                      docker-compose build
-                      docker-compose up -d
+                      cd /home/blury/perso/ia/gpt4-all-fastapi
+                      docker compose down --remove-orphans
+                      docker compose build
+                      docker compose up -d
