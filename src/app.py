@@ -16,7 +16,7 @@ class ResponseModel(BaseModel):
 
 
 app = FastAPI()
-gptj = gpt4all.GPT4All("ggml-gpt4all-j-v1.3-groovy")
+gptj = gpt4all.GPT4All("ggml-mpt-7b-chat.bin")
 
 # Add CORS middleware to allow cross-origin requests
 app.add_middleware(
